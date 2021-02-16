@@ -5,4 +5,16 @@
 
 
 def check_pwd(pss_wrd):
-    return False
+    """
+    Program checks password to meet requirements including:
+    Must be between 8 and 20 characters (inclusive)
+    Must contain at least one lowercase letter
+    Must contain at least one uppercase letter
+    Must contain at least one digit
+    Must contain at least one symbol from: ~`!@#$%^&*()_+-=
+    """
+
+    check_p = False
+    if len(pss_wrd) > 7 or len(pss_wrd) < 21:
+        check_p = True
+    return check_p
