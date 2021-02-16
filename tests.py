@@ -46,7 +46,12 @@ class TestCase(unittest.TestCase):
         self.assertFalse(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 
-
+    def test5(self):
+        # test for password with correct characters length of 8
+        # Checking to make sure test fails for non string
+        assert_input = "ABCDEF!1"
+        self.assertFalse(check_pwd(assert_input),
+                         msg='check_pwd()'.format())
 
 
 if __name__ == '__main__':
