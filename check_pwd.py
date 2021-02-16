@@ -14,14 +14,19 @@ def check_pwd(pss_wrd):
     Must contain at least one symbol from: ~`!@#$%^&*()_+-=
     """
 
-    check_p = False
-    if len(pss_wrd) > 7 or len(pss_wrd) < 21:
-        check_p = True
+    check_p = True
+    # checks that length of string is between 8 and 20
+    if len(pss_wrd) < 8 or len(pss_wrd) > 20:
+        return False
 
     # checks to see if password has a lowercase letter
+    check_l = False
+    check_u = False
     for i in pss_wrd:
-        check_p = False
         if i.islower():
-            check_p = True
-            break
+            check_l = True
+        if i.isupper():
+            check_u = True
+    if not check_l and not check_u:
+        return False
     return check_p
