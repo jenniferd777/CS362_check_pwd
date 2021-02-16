@@ -17,6 +17,8 @@ def check_pwd(pss_wrd):
     check_p = False
     if len(pss_wrd) > 7 or len(pss_wrd) < 21:
         check_p = True
+
+    # checks to see if password has a lowercase letter
     for i in pss_wrd:
         check_p = False
         if i.islower():
