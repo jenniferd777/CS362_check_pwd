@@ -17,4 +17,9 @@ def check_pwd(pss_wrd):
     check_p = False
     if len(pss_wrd) > 7 or len(pss_wrd) < 21:
         check_p = True
+    for i in pss_wrd:
+        check_p = False
+        if i.islower():
+            check_p = True
+            break
     return check_p
