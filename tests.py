@@ -22,9 +22,15 @@ class TestCase(unittest.TestCase):
         # test for password with letters only and length 8
         # Checking correct length with a string should return true
         assert_input = "abcdefgh"
-        expected = False
         self.assertTrue(check_pwd(assert_input),
                          msg='check_pwd()'.format())
+
+    def test2(self):
+        # test for password with empty string
+        # Checking empty string should return false
+        assert_input = ""
+        self.assertFalse(check_pwd(assert_input),
+                        msg='check_pwd()'.format())
 
 
 if __name__ == '__main__':
