@@ -21,7 +21,7 @@ class TestCase(unittest.TestCase):
     def test1(self):
         # test for password with letters only and length 8
         # Checking correct length with a string should return true
-        assert_input = "abcdefgh"
+        assert_input = "Abcdef!1"
         self.assertTrue(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 
@@ -31,6 +31,15 @@ class TestCase(unittest.TestCase):
         assert_input = ""
         self.assertFalse(check_pwd(assert_input),
                         msg='check_pwd()'.format())
+
+    def test3(self):
+        # test for password with correct characters length of 7
+        # Checking to make sure test fails for length less than 8
+        assert_input = "Abcdf!1"
+        self.assertFalse(check_pwd(assert_input),
+                         msg='check_pwd()'.format())
+
+
 
 
 if __name__ == '__main__':
