@@ -39,6 +39,13 @@ class TestCase(unittest.TestCase):
         self.assertFalse(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 
+    def test4(self):
+        # test for password with correct characters length of 21
+        # Checking to make sure test fails for length more than 20
+        assert_input = "Abcdf!1jtrefirtydflqr"
+        self.assertFalse(check_pwd(assert_input),
+                         msg='check_pwd()'.format())
+
 
 
 
