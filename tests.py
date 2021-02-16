@@ -23,7 +23,7 @@ class TestCase(unittest.TestCase):
         # Checking correct length with a string should return true
         assert_input = "abcdefgh"
         expected = False
-        self.assertFalse(check_pwd(assert_input),
+        self.assertTrue(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 
 
