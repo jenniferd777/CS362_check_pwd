@@ -70,58 +70,66 @@ class TestCase(unittest.TestCase):
     def test8(self):
         # test for password with correct characters length of 8
         # Checking to make sure test pass for correct character ~
-        assert_input = "abcdfHa~"
-        self.assertFalse(check_pwd(assert_input),
+        assert_input = "abc5fHa~"
+        self.assertTrue(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 
     def test9(self):
         # test for password with correct characters length of 8
         # Checking to make sure test pass for correct character `
-        assert_input = "abcdfHa`"
-        self.assertFalse(check_pwd(assert_input),
+        assert_input = "abc9fHa`"
+        self.assertTrue(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 
     def test10(self):
         # test for password with correct characters length of 8
         # Checking to make sure test pass for correct character !@
-        assert_input = "abcdfH!@"
-        self.assertFalse(check_pwd(assert_input),
+        assert_input = "abc1fH!@"
+        self.assertTrue(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 
     def test11(self):
         # test for password with correct characters length of 8
         # Checking to make sure test pass for correct character #$
-        assert_input = "abcdfH#$"
-        self.assertFalse(check_pwd(assert_input),
+        assert_input = "abc1fH#$"
+        self.assertTrue(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 
     def test12(self):
         # test for password with correct characters length of 8
         # Checking to make sure test pass for correct character %^
-        assert_input = "abcdfH%^"
-        self.assertFalse(check_pwd(assert_input),
+        assert_input = "abc1fH%^"
+        self.assertTrue(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 
     def test13(self):
         # test for password with correct characters length of 8
         # Checking to make sure test pass for correct character %^
-        assert_input = "abcdfH&*"
-        self.assertFalse(check_pwd(assert_input),
+        assert_input = "abc1fH&*"
+        self.assertTrue(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 
     def test14(self):
         # test for password with correct characters length of 8
         # Checking to make sure test pass for correct character %^
-        assert_input = "abcdfH()"
-        self.assertFalse(check_pwd(assert_input),
+        assert_input = "abc1fH()"
+        self.assertTrue(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 
     def test15(self):
         # test for password with correct characters length of 8
         # Checking to make sure test pass for correct character %^
-        assert_input = "abcdfH_+"
-        self.assertFalse(check_pwd(assert_input),
+        assert_input = "abc1fH_+"
+        self.assertTrue(check_pwd(assert_input),
                          msg='check_pwd()'.format())
+
+    def test16(self):
+        # test for password with correct characters length of 8
+        # Checking to make sure test pass for correct character %^
+        assert_input = "abc1fH-="
+        self.assertTrue(check_pwd(assert_input),
+                        msg='check_pwd()'.format())
+
 
 if __name__ == '__main__':
     unittest.main()
