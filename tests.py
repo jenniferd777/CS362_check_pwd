@@ -69,8 +69,15 @@ class TestCase(unittest.TestCase):
 
     def test8(self):
         # test for password with correct characters length of 8
-        # Checking to make sure test pass for correct character
+        # Checking to make sure test pass for correct character ~
         assert_input = "abcdfHa~"
+        self.assertFalse(check_pwd(assert_input),
+                         msg='check_pwd()'.format())
+
+    def test9(self):
+        # test for password with correct characters length of 8
+        # Checking to make sure test pass for correct character `
+        assert_input = "abcdfHa`"
         self.assertFalse(check_pwd(assert_input),
                          msg='check_pwd()'.format())
 

@@ -28,13 +28,13 @@ def check_pwd(pss_wrd):
     check_s = False
     for i in pss_wrd:
         asc_conv = ord(i)
-        if 96 < asc_conv < 123:
+        if 96 < asc_conv < 123:  # checks for lowercase letters
             check_l = True
-        elif 64 < asc_conv < 91:
+        elif 64 < asc_conv < 91:  # checks for uppercase letters
             check_u = True
-        elif 47 < asc_conv < 58:
+        elif 47 < asc_conv < 58:  # checks for numbers 0 - 9
             check_n = True
-        elif i in symbols:
+        elif i in symbols:  # checks for correct symbols
             check_s = True
         else:
             return False
