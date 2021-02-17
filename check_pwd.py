@@ -20,16 +20,24 @@ def check_pwd(pss_wrd):
         return False
 
     # checks to see if password has a lowercase letter
+    # checks to see if password has a lowercase letter
+    symbols = '~`!@#$%^&*()_+-='
     check_l = False  # bool for lowercase
     check_u = False  # bool for uppercase
     check_n = False  # bool for number
+    check_s = False
     for i in pss_wrd:
-        if i.islower():
+        asc_conv = ord(i)
+        if 96 < asc_conv < 123:
             check_l = True
-        if i.isupper():
+        elif 64 < asc_conv < 91:
             check_u = True
-        if i.isnumeric():
+        elif 47 < asc_conv < 58:
             check_n = True
-    if not check_l or not check_u or not check_n:
+        elif i in symbols:
+            check_s = True
+        else:
+            return False
+    if not check_l or not check_u or not check_n or not check_s:
         return False
     return check_p
